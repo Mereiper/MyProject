@@ -1,4 +1,5 @@
 import time
+from desktop_notifier import DesktopNotifier
 
 print("Welcome to basic timer!")
 print(f"Now -> Day: {time.strftime('%A')}, Month: {time.strftime('%B')}, Year: {time.strftime('%Y')}")
@@ -16,4 +17,8 @@ for x in range(int(duration), 0, -1):
     hr = int(x / 3600)
     print(f"{hr:02}:{minute:02}:{sec:02}")
     time.sleep(1)
-print(f"time is over, now time: {time.strftime('%X')}")
+title1 = "Time over!"
+message1 = "Thanks for the using this app."
+
+notifier = DesktopNotifier()
+notifier.send_sync(title1,message1)
